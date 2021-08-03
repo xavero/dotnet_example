@@ -23,10 +23,16 @@ jobs:
       run: dotnet build --no-restore -c Release
     - name: Test
       run: dotnet test --no-build -c Release --verbosity normal --logger "trx;LogFileName=${GITHUB_WORKSPACE}/test-results.trx"
+    
+    - uses: actions/upload-artifact@v2  # upload test results
+        if: success() || failure()        # run this step even if previous step failed
+        with:
+          name: tests-results
+          path: ${GITHUB_WORKSPACE}/test-results.trx
     - uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
-        artifact: "*.trx"
-        name: unit-tests
-        path: ${GITHUB_WORKSPACE}
+        artifact: tests-results
+        name: Unit Tests
+        path: '*.trx'
         reporter: dotnet-trx
