@@ -28,5 +28,5 @@ jobs:
       with:
         artifact: test-results.trx
         name: unit-tests
-        path: ''
+        path: WeatherApp.Tests/TestResults
         reporter: dotnet-trx
