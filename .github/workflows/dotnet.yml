@@ -28,4 +28,5 @@ jobs:
       with:
         artifact: test-results.trx
         name: unit-tests
+        path: ''
         reporter: dotnet-trx
