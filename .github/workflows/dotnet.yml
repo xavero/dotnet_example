@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore -c Release
     - name: Test
-      run: dotnet test --no-build -c Release --verbosity normal --logger "trx;LogFileName=${GITHUB_WORKSPACE}test-results.trx"
+      run: dotnet test --no-build -c Release --verbosity normal --logger "trx;LogFileName=${GITHUB_WORKSPACE}/test-results.trx"
     - uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
