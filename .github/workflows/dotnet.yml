@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
   pull_request:
     branches: [ main ]
 
@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore WeatherApp/WeatherApp.csproj
+      run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore -c Release WeatherApp/WeatherApp.csproj
+      run: dotnet build --no-restore -c Release
     - name: Test
-      run: dotnet test --no-build -c Release WeatherApp/WeatherApp.csproj --verbosity normal
+      run: dotnet test --no-build -c Release --verbosity normal
