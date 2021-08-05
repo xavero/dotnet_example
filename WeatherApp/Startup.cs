@@ -11,10 +11,8 @@ namespace WeatherApp
     {
         public Startup(IConfiguration configuration)
         {
+            string x = "";
             Configuration = configuration;
-            a
-                b
-                c
         }
 
         public IConfiguration Configuration { get; }
