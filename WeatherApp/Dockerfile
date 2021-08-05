@@ -1,3 +1,5 @@
+## docker build -f Dockerfile ..\.
+
 FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine AS base
 WORKDIR /app
 EXPOSE 5000

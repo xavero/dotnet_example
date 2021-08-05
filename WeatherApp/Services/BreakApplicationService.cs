@@ -5,7 +5,7 @@ namespace WeatherApp
 {
     public class BreakApplicationService : IBreakApplicationService
     {
-        private static int _isBroken = 0;
+        private int _isBroken = 0;
 
         public bool IsApplicationBroken => _isBroken > 0;
 
