@@ -11,7 +11,7 @@ namespace WeatherApp
 
         public void BreakMyApplication()
         {
-            // Interlocked.Increment(ref _isBroken);
+            Interlocked.Increment(ref _isBroken);
         }
     }
 }
