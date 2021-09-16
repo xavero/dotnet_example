@@ -7,6 +7,7 @@ namespace WeatherApp
     public class ApplicationBrokenMiddleware : IMiddleware
     {
         private readonly IBreakApplicationService _breakApplication;
+        public readonly Random Test;
 
         public ApplicationBrokenMiddleware(IBreakApplicationService breakApplication)
         {
@@ -16,6 +17,7 @@ namespace WeatherApp
             }
 
             _breakApplication = breakApplication;
+            Test = new Random();
         }
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
